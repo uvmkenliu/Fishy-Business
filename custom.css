@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+:root{
+    --background-color: rgb(182, 182, 182);
+    --timer-background: rgb(121, 121, 121);
+    --button-color: rgb(151, 151, 151);
+    --box-shadow-dark: rgba(0,0,0,0.15);
+    --box-shadow-light: rgba(255,255,255,0.15);
+    --border-color-active: rgba(250, 250, 250, 0.541);
+    --hover-color: rgb(60, 167, 255);
+    --water-color: rgb(60, 167, 255);
+    --fish-color: rgb(202, 144, 69);
+
+}
+body{
+    background-color: var(--background-color);
+}
+main{
+    display: grid;
+    margin: 0 1%;
+    grid-template-columns: 39% 20% 39%;
+    grid-template-rows: 35vw;
+    grid-gap: 1%;
+    grid-template-areas:
+    "stringButtons timer controller";
+}
+/*=======Nav=======*/
+nav{
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 10px var(--box-shadow-dark);
+}
+.navSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    margin-right: 10%;
+    margin-left: auto;
+}
+.navSection a, .navSection a:visited{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.navSection a:hover{
+    color: var(--hover-color);
+}
+.logoLink{
+    display: flex;
+    margin-left: 5%;
+    text-decoration: none;
+}
+.fishLogo{
+    width: 60px;
+    height: 60px;
+}
+.fishLogo img{
+    width: 100%;
+}
+.logoWordContainer{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
+.logoWordContainer div{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: inset 0px 0px 5px rgb(113, 171, 219);
+    margin: 0 2px;
+}
+
+/*======Button Rules=======*/
+.allButtonsContainer{
+    grid-area: controller;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    box-shadow: inset 5px 5px 5px var(--box-shadow-light),
+    inset -5px -5px 5px var(--box-shadow-light);
+    padding: 2%;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 33% 34% 33%;
+    grid-template-areas: 
+    ". up ."
+    "left center right"
+    ". down .";
+}
+.buttonSection{
+    position: relative;
+}
+.buttonSection div{
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 10px;
+    height: 30px;
+    margin: 5px;
+    background-color: black;
+}
+.directionButton{
+    border: none;
+    background-color: var(--button-color);
+    box-shadow: inset 5px 5px 15px var(--box-shadow-dark),
+    inset -5px -5px 15px var(--box-shadow-light),
+    5px 5px 15px var(--box-shadow-dark),
+    -5px -5px 15px var(--box-shadow-light);
+    transition: all 100ms ease;
+}
+.directionButton:active{
+    transform: scale(0.98);
+    box-shadow: inset 5px 5px 15px var(--box-shadow-dark),
+    inset -5px -5px 15px var(--box-shadow-light),
+    0px 0px 25px 10px var(--border-color-active);
+    border: solid 2px var(--border-color-active);
+}
+.directionButton:hover{
+    cursor: pointer;
+}
+.upButton{
+    border-radius: 50% 50% 0 0;
+}
+.rightButton{
+    border-radius: 0 50% 50% 0;
+}
+.downButton{
+    border-radius: 0 0 50% 50%;
+}
+.leftButton{
+    border-radius: 50% 0 0 50%;
+}
+.centerButton{
+    border-radius: 50%;
+}
+.directionButton{
+    width: 100%;
+    height: 100%;
+}
+/*===Button sections===*/
+.upButtonSection{
+    grid-area: up;
+}
+.rightButtonSection{
+    grid-area: right;
+}
+.downButtonSection{
+    grid-area: down;
+}
+.leftButtonSection{
+    grid-area: left;
+}
+.centerButtonSection{
+    grid-area: center;
+}
+/*====String Buttons=====*/
+.stringButtonsContainer{
+    grid-area: stringButtons;
+    display: grid;
+    grid-template-areas: 
+    "stringUp"
+    "stringDown";
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    box-shadow: inset 5px 5px 5px var(--box-shadow-light),
+    inset -5px -5px 5px var(--box-shadow-light);
+    padding: 2%;
+    border-radius: 15px;
+}
+.upStringButtonSection{
+    grid-area: stringUp;
+    width: 50%;
+    margin: 0 auto;
+}
+.downStringButtonSection{
+    grid-area: stringDown;
+    width: 50%;
+    margin: 0 auto;
+}
+.upStringButton{
+    border-radius: 50% 50% 0 0;
+}
+.downStringButton{
+    border-radius: 0 0 50% 50%;
+}
+/*======Timer=======*/
+.timerContainer{
+    position: relative;
+    grid-area: timer;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: inset 5px 5px 5px var(--box-shadow-light),
+    inset -5px -5px 5px var(--box-shadow-light);
+    margin: auto;
+    text-align: center;
+    background-color: var(--timer-background);
+}
+.timer{
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+    font-size: 100px;
+    color: white;
+    transition: all 100ms ease;
+}
+.startTimer{
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    height: 50px;
+    margin: auto;
+    border-radius: 25px;
+    border: none;
+    transition: border 200ms ease;
+}
+.startTimer:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 5px var(--box-shadow-dark);
+}
+.startTimer:active{
+    transform: translateY(0px);
+    border: solid 3px var(--fish-color);
+}
+.timerColor{
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+    border-radius: 15px;
+    background-color:rgb(116, 175, 223);
+    box-shadow: inset 5px 5px 5px var(--box-shadow-light),
+    inset -5px -5px 5px var(--box-shadow-light);
+    height: 0%;
+    width: 100%;
+    margin: auto;
+    transition: all 1000ms linear;
+}
+.timerColor:hover{
+    border: none;
+}
+/*=====Timer Levels======*/
+.levels{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+}
+.levels input[type='button']{
+    width: 80%;
+    height: 40px;
+    margin: 5px auto;
+    border-radius: 20px;
+    border: none;
+    transition: border 200ms ease;
+}
+.levels input[type='button']:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 5px var(--box-shadow-dark);
+}
+.levels input[type='button']:active{
+    transform: translateY(0px);
+    border: solid 2px var(--fish-color);
+}

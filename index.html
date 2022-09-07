@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Fishy Business</title>
+        <meta name="author" content="Ty Allembert">
+        <meta name="description" content="CS 121 final project web app">
+        <!--<link rel="icon" href="images/landscape.png">-->
+        <link rel = "stylesheet"
+            href = "../static/custom.css"
+            type = "text/css">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script src="../static/script.js" defer></script>
+    </head>
+    <body>
+        <nav>
+            <!--Fish Logo-->
+            <a class = 'logoLink' href = 'index.html'>
+                <figure class = 'fishLogo'>
+                    <img
+                    alt = 'Little fish boi'
+                    src = '../static/images/clown-fish.png'
+                >
+                </figure>
+                <!--Logo Word-->
+                <section class = 'logoWordContainer'>
+                    <p class = 'fishy'>Fishy</p>
+                    <div></div>
+                    <p class = 'business'>Business</p>
+                </section>
+            </a>
+            <section class = "navSection">
+                <a href = "index.html">Play</a>
+                <a href = "leaderboard.html">Leaderboard</a>
+                <a href = "howToPlay.html">How To Play?</a>
+            </section>
+        </nav>
+        <main>
+            <section class = 'playerNameSection'>
+                <label for = 'playerName'>Username: </label>
+                <input class = "playerName"     
+                        name = "playerName"
+                        type = "text"
+                        value = ""
+                    >
+            </section>
+            <!--the timer-->
+            <section class = "timerContainer">
+                <!--print timer-->
+                <p class = "timer"><span class = 'minutes'>1</span>:<span class = 'seconds'>00</span></p>
+                <!--start button-->
+                <input class = "startTimer"     
+                        name = "startTimer"
+                        type = "button"
+                        value = "Start"
+                    >
+                <!--backgroundcolor-->
+                <div class = "timerColor"></div>
+                
+                <!--Levels-->
+                <section class = "levels">
+                    <input class = "oneMinute"     
+                        name = "oneMinute"
+                        type = "button"
+                        value = "One Minute"
+                    >
+                    <input class = "twoMinute"     
+                        name = "twoMinute"
+                        type = "button"
+                        value = "Two Minute"
+                    >
+                    <input class = "threeMinute"     
+                        name = "threeMinute"
+                        type = "button"
+                        value = "Three Minute"
+                    >
+                </section>
+            </section>
+            
+
+            <!--move the crane buttons-->
+            <section class = "allButtonsContainer">
+                <!--Up Button-->
+                <section class = "upButtonSection buttonSection">
+                    <div></div>
+                    <div></div>
+                    <input class = "upButton directionButton"     
+                        name = "upButton"
+                        type = "button"
+                    >
+                </section>
+                <!--Right Button-->
+                <section class = "rightButtonSection buttonSection">
+                    <div></div>
+                    <div></div>
+                    <input class = "rightButton directionButton"     
+                        name = "rightButton"
+                        type = "button"
+                    >
+                </section>
+                <!--Down Button-->
+                <section class = "downButtonSection buttonSection">
+                    <div></div>
+                    <div></div>
+                    <input class = "downButton directionButton"     
+                        name = "downButton"
+                        type = "button"
+                    >
+                </section>
+                <!--Left Button-->
+                <section class = "leftButtonSection buttonSection">
+                    <div></div>
+                    <div></div>
+                    <input class = "leftButton directionButton"     
+                        name = "leftButton"
+                        type = "button"
+                    >
+                </section>
+                <!--Center Button-->
+                <section class = "centerButtonSection buttonSection">
+                    <div></div>
+                    <div></div>
+                    <input class = "centerButton directionButton"     
+                        name = "centerButton"
+                        type = "button"
+                    >
+                </section>
+            </section>
+
+            <!--string up and down buttons-->
+            <section class = "stringButtonsContainer">
+                <!--String Up Button-->
+                <section class = "upStringButtonSection buttonSection">
+                    <div></div>
+                    <div></div>
+                    <input class = "upStringButton directionButton"     
+                        name = "upStringButton"
+                        type = "button"
+                    >
+                </section>
+                <!--String Down Button-->
+                <section class = "downStringButtonSection buttonSection">
+                    <div></div>
+                    <div></div>
+                    <input class = "downStringButton directionButton"     
+                        name = "downStringButton"
+                        type = "button"
+                    >
+                </section>
+            </section>
+        </main>
+    </body>
+</html>
